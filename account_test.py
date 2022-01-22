@@ -91,6 +91,19 @@ class TestUser(unittest.TestCase):
 
         self.assertTrue(username_exists)
 
+    def test_password_exists(self):
+        """
+        Test if the password exists in the user_logins list
+        """
+
+        self.new_user.save_user_logins()
+        test_user = User("Monga","4321")
+        test_user.save_user_logins()
+
+        password_exists = User.password_exists("4321")
+        
+        self.assertTrue(password_exists)
+
 
 
 if __name__ == '__main__':
