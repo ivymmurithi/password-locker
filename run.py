@@ -20,3 +20,15 @@ def delete_logins(logins):
     Function that deletes logins
     """
     logins.delete_user_logins()
+
+def find_username(string):
+    """
+    Authenticates username entered
+    """
+    return User.username_authentication(string)
+
+def find_password(string):
+    """
+    Authenticates password entered
+    """
+    return User.password_authentication(string)
