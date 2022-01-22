@@ -58,9 +58,15 @@ class TestUser(unittest.TestCase):
         self.new_user.delete_user_logins()
         self.assertEqual(len(User.user_logins),1)
 
-    def test_user_authentication(self):
+    def test_username_authentication(self):
 
-        self
+        self.new_user.save_user_logins()
+        test_user = User("Monga","4321")
+        test_user.save_user_logins()
+
+        logged_in = User.username_authentication("Monga")
+
+        self.assertEqual(logged_in.user_name,test_user.user_name)
 
 
 if __name__ == '__main__':
