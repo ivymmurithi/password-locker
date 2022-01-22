@@ -17,5 +17,5 @@ class User:
         password: New password for password.
         """
 
-        self.user_name =  user_name
+        self.user_name = user_name
         self.password = password
