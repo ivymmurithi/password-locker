@@ -37,13 +37,22 @@ class User:
     @classmethod
     def username_authentication(cls,string):
         """
-        Method that checks for the inputed credentials and 
-        returns the user account
+        Method that checks for the inputed username and 
+        returns the username
         """
 
         for user in cls.user_logins:
             if user.user_name == string:
                     return user
 
-    
+    @classmethod
+    def password_authentication(cls,string):
+        """
+        Method that checks for the inputed password and 
+        returns the user password and account
+        """
+
+        for user in cls.user_logins:
+            if user.password == string:
+                return user
 
