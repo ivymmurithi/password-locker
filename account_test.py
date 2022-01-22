@@ -78,6 +78,19 @@ class TestUser(unittest.TestCase):
         
         self.assertEqual(logged_in.password,test_user.password)
 
+    def test_username_exists(self):
+        """
+        Test if the username exists
+        """
+
+        self.new_user.save_user_logins()
+        test_user = User("Monga","4321")
+        test_user.save_user_logins()
+
+        username_exists = User.username_exists("Monga")
+
+        self.assertTrue(username_exists)
+
 
 
 if __name__ == '__main__':
