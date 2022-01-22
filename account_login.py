@@ -56,3 +56,17 @@ class User:
             if user.password == string:
                 return user
 
+    @classmethod
+    def username_exists(cls,string):
+        """
+        Method that checks if the username added username exists inside user_logins list
+        """
+
+        for user in cls.user_logins:
+            if user.user_name == string:
+                return True
+                
+        return False 
+
+
+

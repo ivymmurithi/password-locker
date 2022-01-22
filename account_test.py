@@ -80,7 +80,7 @@ class TestUser(unittest.TestCase):
 
     def test_username_exists(self):
         """
-        Test if the username exists
+        Test if the username exists in the user_logins list
         """
 
         self.new_user.save_user_logins()
