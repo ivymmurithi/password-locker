@@ -58,6 +58,9 @@ class TestUser(unittest.TestCase):
         self.new_user.delete_user_logins()
         self.assertEqual(len(User.user_logins),1)
 
+    def test_user_authentication(self):
+
+        self
 
 
 if __name__ == '__main__':

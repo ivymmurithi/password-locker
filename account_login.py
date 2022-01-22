@@ -34,3 +34,15 @@ class User:
         """
         User.user_logins.remove(self)
 
+    @classmethod
+    def user_authentication(cls,string):
+        """
+        Method that checks for the inputed credentials and 
+        returns the user account
+        """
+
+        for user in cls.user_logins:
+            if user.user_name == string:
+                if user.password == string:
+                    return user
+
