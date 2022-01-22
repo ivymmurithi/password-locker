@@ -28,3 +28,9 @@ class User:
 
         User.user_logins.append(self)
 
+    def delete_user_logins(self):
+        """
+        Method for deleting users
+        """
+        User.user_logins.remove(self)
+
