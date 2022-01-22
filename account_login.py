@@ -21,3 +21,10 @@ class User:
     An empty list to store the user_name and password
     """
 
+    def save_user_logins(self):
+        """
+        Method for saving the created user accounts
+        """
+
+        User.user_logins.append(self)
+
