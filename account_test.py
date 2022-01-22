@@ -1,4 +1,3 @@
-from cgi import test
 import unittest
 """
 Importing unittest module
