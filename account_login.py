@@ -77,8 +77,16 @@ class User:
         for user in cls.user_logins:
             if user.password == string:
                 return True
-                
+
         return False
+
+    @classmethod
+    def display_logins(cls):
+        """
+        Returns all user logins
+        """
+
+        return cls.user_logins
 
 
 

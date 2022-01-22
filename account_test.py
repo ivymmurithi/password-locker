@@ -101,9 +101,15 @@ class TestUser(unittest.TestCase):
         test_user.save_user_logins()
 
         password_exists = User.password_exists("4321")
-        
+
         self.assertTrue(password_exists)
 
+    def test_display_logins(self):
+        """
+        Test if the method returns all contacts saved
+        """ 
+
+        self.assertEqual(User.display_logins(),User.user_logins)
 
 
 if __name__ == '__main__':
