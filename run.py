@@ -32,3 +32,17 @@ def find_password(string):
     Authenticates password entered
     """
     return User.password_authentication(string)
+
+def username_exists(string):
+    """
+    check if their is a username object
+    """
+    return User.username_exists(string)
+
+def password_exists(string):
+    """
+    Check if password object exists
+    """
+    return User.password_exists(string)
+
+    
