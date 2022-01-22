@@ -68,7 +68,16 @@ class TestUser(unittest.TestCase):
 
         self.assertEqual(logged_in.user_name,test_user.user_name)
 
-    def test_
+    def test_password_authentication(self):
+        self.new_user.save_user_logins()
+        test_user = User("4321")
+        test_user.save_user_logins()
+
+        logged_in = User.username_authentication("4321")
+        self.assertEqual(logged_in.password,test_user.password)
+
+
+
 
 if __name__ == '__main__':
     unittest.main()
