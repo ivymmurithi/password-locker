@@ -18,3 +18,7 @@ class Credentials:
 
     def delete_socials(self):
         Credentials.socials_list.remove(self)
+
+    @classmethod
+    def display_socials(cls):
+        return cls.socials_list

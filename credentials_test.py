@@ -23,6 +23,9 @@ class TestCredentials(unittest.TestCase):
         self.new_credentials.save_socials()
         self.assertEqual(len(Credentials.socials_list),1)
 
+    def test_display_socials(self):
+        self.assertEqual(Credentials.display_socials(),Credentials.socials_list)
+
 
 if __name__ == "__main__":
     unittest.main()
