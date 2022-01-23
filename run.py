@@ -73,6 +73,10 @@ def main():
             save_user_logins(new_logins(user_name,password))
 
             print(f"Hello {user_name}")
+
+            while True:
+                print("1. Add credentials 2. Display credentials")
+
             
 
 
