@@ -19,6 +19,10 @@ class TestCredentials(unittest.TestCase):
         self.new_credentials.save_socials()
         self.assertEqual(len(Credentials.socials_list),1)
 
+    def test_delete_socials(self):
+        self.new_credentials.save_socials()
+        self.assertEqual(len(Credentials.socials_list),1)
+
 
 if __name__ == "__main__":
     unittest.main()

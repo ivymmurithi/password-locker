@@ -15,3 +15,6 @@ class Credentials:
 
     def save_socials(self):
         Credentials.socials_list.append(self)
+
+    def delete_socials(self):
+        Credentials.socials_list.remove(self)
