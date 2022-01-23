@@ -3,8 +3,9 @@ class Credentials:
     Class that generates new instances of credentials
     """
 
-    def __init__(self,social_username,social_password):
+    def __init__(self,social_name, social_username,social_password):
         
+        self.social_name = social_name
         self.social_username = social_username
         self.social_password = social_password
 

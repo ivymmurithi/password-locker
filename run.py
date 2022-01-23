@@ -75,7 +75,7 @@ def main():
             print(f"Hello {user_name}")
 
             while True:
-                print("1. Add credentials 2. Display credentials")
+                print("1. Add credentials \n 2. Display credentials \n 3. Delete credentials \n")
 
             
 

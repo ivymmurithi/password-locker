@@ -6,12 +6,13 @@ class TestCredentials(unittest.TestCase):
 
     def setUp(self):
 
-        self.new_credentials = Credentials("FeuerMuschi","12345")
+        self.new_credentials = Credentials("Instagram","FeuerMuschi","12345")
 
     def tearDown(self):
         Credentials.socials_list = []
 
     def test_init(self):
+        self.assertEqual(self.new_credentials.social_name,"Instagram")
         self.assertEqual(self.new_credentials.social_username,"FeuerMuschi")
         self.assertEqual(self.new_credentials.social_password,"12345")
 
