@@ -1,10 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.10
 
 from account_login import User
 
 def new_logins(user_name,password):
     """
-    create an instance of user logins
+    create user logins
     """
     logins = User(user_name,password)
     return logins
@@ -21,29 +21,29 @@ def delete_logins(logins):
     """
     logins.delete_user_logins()
 
-def find_username(string):
+def find_username(user_name):
     """
     Authenticates username entered
     """
-    return User.username_authentication(string)
+    return User.username_authentication(user_name)
 
-def find_password(string):
+def find_password(password):
     """
     Authenticates password entered
     """
-    return User.password_authentication(string)
+    return User.password_authentication(password)
 
-def username_exists(string):
+def username_exists(user_name):
     """
     check if their is a username object
     """
-    return User.username_exists(string)
+    return User.username_exists(user_name)
 
-def password_exists(string):
+def password_exists(password):
     """
     Check if password object exists
     """
-    return User.password_exists(string)
+    return User.password_exists(password)
 
 def display_user_logins():
     """
@@ -52,12 +52,31 @@ def display_user_logins():
     return User.display_logins()
 
 def main():
-    print("Hello, Welcome to password locker where we help keep your pass safe and easily access them \n")
-    print("Enter your username?")
+    print("Keep your password safe with password locker \n")
 
-    user_name = input()
+    while True:
 
-    print(f"Hello {user_name}")
+        print("Use these to maneuver: \n 1. Create Account \n 2. Sign Up \n 3. Delete Account \n")
+
+        option = int(input())
+    
+        if option == 1:
+            
+            print("Create your username")
+
+            user_name = input()
+
+            print("Create your password")
+
+            password = input()
+
+            save_user_logins(new_logins(user_name,password))
+
+            print(f"Hello {user_name}")
+            
+
+
+
 
 if __name__ == "__main__":
     main()

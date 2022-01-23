@@ -35,47 +35,47 @@ class User:
         User.user_logins.remove(self)
 
     @classmethod
-    def username_authentication(cls,string):
+    def username_authentication(cls,user_name):
         """
         Method that checks for the inputed username and 
         returns the username
         """
 
         for user in cls.user_logins:
-            if user.user_name == string:
+            if user.user_name == user_name:
                     return user
 
     @classmethod
-    def password_authentication(cls,string):
+    def password_authentication(cls,password):
         """
         Method that checks for the inputed password and 
         returns the user password and account
         """
 
         for user in cls.user_logins:
-            if user.password == string:
+            if user.password == password:
                 return user
 
     @classmethod
-    def username_exists(cls,string):
+    def username_exists(cls,user_name):
         """
         Method that checks if the username added username exists inside user_logins list
         """
 
         for user in cls.user_logins:
-            if user.user_name == string:
+            if user.user_name == user_name:
                 return True
 
         return False 
 
     @classmethod
-    def password_exists(cls,string):
+    def password_exists(cls,password):
         """
         Method that checks if the username added username exists inside user_logins list
         """
 
         for user in cls.user_logins:
-            if user.password == string:
+            if user.password == password:
                 return True
 
         return False
