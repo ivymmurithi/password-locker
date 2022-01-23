@@ -8,4 +8,10 @@ class Credentials:
         self.social_username = social_username
         self.social_password = social_password
 
-        socials_list = []
+    socials_list = []
+    """
+    Empty list to store socials username and password
+    """
+
+    def save_socials(self):
+        Credentials.socials_list.append(self)
