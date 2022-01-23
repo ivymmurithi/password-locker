@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.10
+#!/usr/bin/env python3
 
 from account_login import User
 
@@ -6,8 +6,8 @@ def new_logins(user_name,password):
     """
     create an instance of user logins
     """
-    new_user = User(user_name,password)
-    return new_user
+    logins = User(user_name,password)
+    return logins
 
 def save_user_logins(logins):
     """
@@ -45,4 +45,20 @@ def password_exists(string):
     """
     return User.password_exists(string)
 
-    
+def display_user_logins():
+    """
+    Display user logs
+    """
+    return User.display_logins()
+
+def main():
+    print("Hello, Welcome to password locker where we help keep your pass safe and easily access them \n")
+    print("Enter your username?")
+
+    user_name = input()
+
+    print(f"Hello {user_name}")
+
+if __name__ == "__main__":
+    main()
+
