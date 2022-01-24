@@ -70,7 +70,7 @@ def main():
 
     while True:
 
-        print("Use these to maneuver: \n 1. Create Account \n 2. Sign Up \n 3. Delete Account \n")
+        print("Use these to maneuver: \n 1. Create Account \n 2. Sign Up \n")
 
         option = int(input())
 
@@ -90,26 +90,9 @@ def main():
 
             while True:
 
-                print("\n")
+                print("Choose what you'd like to do \n")
 
-        # elif option == 2:
-
-        #     print("Enter your username")
-
-        #     user_name =input()
-
-        #     print("Enter Password")
-
-        #     password = input()
-
-        #     if find_username(user_name,password):
-        #         user_name = find_username(find_password(user_name,password)) 
-
-        #         print(f"Logged in as {user_name}")
-
-        #     print("\n")
-
-                print("1. Add credentials \n 2. Display credentials \n 3. Delete credentials \n")
+                print("\n 1. Add credentials \n 2. Display credentials \n 3. Delete credentials \n")
 
                 choice = int(input())
 
@@ -129,21 +112,69 @@ def main():
 
                     save_credentials(new_credentials(social_name,social_username,social_password))
 
+                    print("\n")
+
                 elif choice == 2:
 
                     if display_credentials():
                         for crendential in display_credentials():
-                            print(f"{crendential.social_name}:{crendential.social_username}:{crendential.social_password}")
+                            print(f"Social Name: {crendential.social_name} \n Username: {crendential.social_username} \n Password: {crendential.social_password} \n")
                     else:
                         print("No credentials found")
 
                 elif choice == 3:
-                    delete_socials()
+                    delete_socials(Credentials)
+        
+        elif option == 2:
+
+            print("Enter your username")
+
+            user_name =input()
+
+            print("Enter Password")
+
+            password = input()
+
+            print(f"Logged in as {user_name}")
+
+            print("\n")
+
+            while True:
+
+                print("Choose what you'd like to do \n")
+
+                print("\n 1. Add credentials \n 2. Display credentials \n 3. Delete credentials \n")
+
+                choice = int(input())
+
+                if choice == 1:
+
+                    print("Enter social platform name")
+
+                    social_name = input()
+
+                    print("Enter username")
+
+                    social_username = input()
+
+                    print("Enter password")
+
+                    social_password = input()
+
+                    save_credentials(new_credentials(social_name,social_username,social_password))
+
+                    print("\n")
+
+                elif choice == 2:
+
+                    if display_credentials():
+                        for crendential in display_credentials():
+                            print(f"Social Name: {crendential.social_name}\n Username: {crendential.social_username} \n Password: {crendential.social_password} \n")
+                    else:
+                        print("No credentials found")
 
 
-                    break
-
-
+            
 
 
 
