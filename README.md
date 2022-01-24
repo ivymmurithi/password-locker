@@ -16,7 +16,7 @@ In your terminal, run:
 
 - $ chmod +x run.py
 
-- $ ./run.py
+- $ python3 run.py
 
 ## Technologies used
 Python3.10
