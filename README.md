@@ -18,6 +18,9 @@ In your terminal, run:
 
 - $ python3 run.py
 
+To use in the terminal:
+Enter the respective number for the action you would like to happen and press enter
+
 ## Technologies used
 Python3.10
 

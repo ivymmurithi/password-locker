@@ -73,7 +73,7 @@ def main():
 
     while True:
 
-        print("Use these to maneuver: \n 1. Create Account \n")
+        print("Use the numbers to maneuver: \n 1. Create Account \n")
 
         option = int(input())
 
@@ -127,7 +127,7 @@ def main():
 
             while True:
 
-                print("Choose what you'd like to do \n")
+                print("Enter a number to choose what you'd like to do \n")
 
                 print("\n 1. Add credentials \n 2. Display credentials \n")
 
