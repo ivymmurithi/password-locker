@@ -2,7 +2,6 @@
 
 import random
 import string
-import pyperclip
 
 from account_login import User
 from credentials_pass import Credentials
