@@ -1,5 +1,4 @@
 import unittest
-import pyperclip
 
 from credentials_pass import Credentials
 
@@ -28,15 +27,6 @@ class TestCredentials(unittest.TestCase):
     def test_display_socials(self):
         self.assertEqual(Credentials.display_socials(),Credentials.socials_list)
 
-
-
-
-
-    # def test_copy(self):
-    #     self.new_credentials.save_socials()
-    #     Credentials.copy_credentials("Instagram")
-
-    #     self.assertEqual(self.new_credentials.social_name,pyperclip.paste())
 
 
 if __name__ == "__main__":

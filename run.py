@@ -73,7 +73,7 @@ def main():
 
     while True:
 
-        print("Use these to maneuver: \n 1. Create Account \n 2. Sign Up \n")
+        print("Use these to maneuver: \n 1. Create Account \n 2. Sign Up")
 
         option = int(input())
 
@@ -97,22 +97,35 @@ def main():
                 print(f"Hello {user_name}")
 
             elif choices == 2:
+
                 length = int(input("Enter the length of password \n"))
+
                 lower = string.ascii_lowercase
+
                 upper = string.ascii_uppercase
+
                 num = string.digits
-                symbols = string.punctuation
-                all = lower + upper + num + symbols
+
+                all = lower + upper + num 
+
                 temp = random.sample(all,length)
+
                 password = "".join(temp)
+
+
+                print("\n")
+
+                print("Below is your generated password \n")
+
                 print(password)
+
                 print("\n")
 
             while True:
 
                 print("Choose what you'd like to do \n")
 
-                print("\n 1. Add credentials \n 2. Display credentials \n 3. Delete credentials \n")
+                print("\n 1. Add credentials \n 2. Display credentials \n")
 
                 choice = int(input())
 
@@ -126,24 +139,51 @@ def main():
 
                     social_username = input()
 
-                    print("Enter password")
+                    print("\n 1. Create Password \n 2. Generate Password")
+                    
+                    choices = int(input())
 
-                    social_password = input()
+                    if choices == 1:
+                        
+                        print("Enter password")
 
-                    save_credentials(new_credentials(social_name,social_username,social_password))
+                        social_password = input()
 
-                    print("\n")
+                    elif choices == 2:
+
+                        lengths = int(input("Enter the length of your password \n"))
+
+                        lowers = string.ascii_lowercase
+
+                        uppers = string.ascii_uppercase
+
+                        nums = string.digits
+
+                        alls = lowers + uppers + nums
+
+                        temps = random.sample(alls,lengths)
+                        
+                        passwords = "".join(temps)
+
+                        print("\n")
+
+                        print("Below is your generated password \n")
+
+                        print(passwords)
+
+                        print("\n")
+
+                    save_credentials(new_credentials(social_name,social_username,social_password,))
+
 
                 elif choice == 2:
 
                     if display_credentials():
                         for crendential in display_credentials():
-                            print(f"Social Name: {crendential.social_name} \n Username: {crendential.social_username} \n Password: {crendential.social_password} \n")
+                            print(f"Social Name {crendential.social_name}  \n Username {crendential.social_username}  \n Password {crendential.social_password} \n")
                     else:
-                        print("No credentials found")
+                            print("No credentials found")
 
-                elif choice == 3:
-                    delete_socials(Credentials)
         
         elif option == 2:
 
@@ -163,7 +203,7 @@ def main():
 
                 print("Choose what you'd like to do \n")
 
-                print("\n 1. Add credentials \n 2. Display credentials \n 3. Delete credentials \n")
+                print("\n 1. Add credentials \n 2. Display credentials \n")
 
                 choice = int(input())
 
