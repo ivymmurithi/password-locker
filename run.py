@@ -1,5 +1,8 @@
 #!/usr/bin/env python3.10
 
+import random
+import string
+
 from account_login import User
 from credentials_pass import Credentials
 
@@ -80,13 +83,30 @@ def main():
 
             user_name = input()
 
-            print("Create your password")
+            print("\n 1. Create Password \n 2. Generate Password")
+            choices = int(input())
 
-            password = input()
+            if choices == 1:
 
-            save_user_logins(new_logins(user_name, password))
+                print("Create your password")
 
-            print(f"Hello {user_name}")
+                password = input()
+
+                save_user_logins(new_logins(user_name, password))
+
+                print(f"Hello {user_name}")
+
+            elif choices == 2:
+                length = int(input("Enter the length of password \n"))
+                lower = string.ascii_lowercase
+                upper = string.ascii_uppercase
+                num = string.digits
+                symbols = string.punctuation
+                all = lower + upper + num + symbols
+                temp = random.sample(all,length)
+                password = "".join(temp)
+                print(password)
+                print("\n")
 
             while True:
 
