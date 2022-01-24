@@ -2,6 +2,7 @@
 
 import random
 import string
+import pyperclip
 
 from account_login import User
 from credentials_pass import Credentials
@@ -73,13 +74,13 @@ def main():
 
     while True:
 
-        print("Use these to maneuver: \n 1. Create Account \n 2. Sign Up")
+        print("Use these to maneuver: \n 1. Create Account \n")
 
         option = int(input())
 
         if option == 1:
             
-            print("Create your username")
+            print("Create your username \n")
 
             user_name = input()
 
@@ -88,17 +89,21 @@ def main():
 
             if choices == 1:
 
+                print("\n")
+
                 print("Create your password")
 
                 password = input()
 
                 save_user_logins(new_logins(user_name, password))
 
+                print("\n")
+
                 print(f"Hello {user_name}")
 
             elif choices == 2:
 
-                length = int(input("Enter the length of password \n"))
+                length = int(input("Enter the length of password(number) \n"))
 
                 lower = string.ascii_lowercase
 
@@ -138,40 +143,10 @@ def main():
                     print("Enter username")
 
                     social_username = input()
-
-                    print("\n 1. Create Password \n 2. Generate Password")
-                    
-                    choices = int(input())
-
-                    if choices == 1:
                         
-                        print("Enter password")
+                    print("Enter password")
 
-                        social_password = input()
-
-                    elif choices == 2:
-
-                        lengths = int(input("Enter the length of your password \n"))
-
-                        lowers = string.ascii_lowercase
-
-                        uppers = string.ascii_uppercase
-
-                        nums = string.digits
-
-                        alls = lowers + uppers + nums
-
-                        temps = random.sample(alls,lengths)
-                        
-                        passwords = "".join(temps)
-
-                        print("\n")
-
-                        print("Below is your generated password \n")
-
-                        print(passwords)
-
-                        print("\n")
+                    social_password = input()
 
                     save_credentials(new_credentials(social_name,social_username,social_password,))
 
@@ -183,56 +158,6 @@ def main():
                             print(f"Social Name {crendential.social_name}  \n Username {crendential.social_username}  \n Password {crendential.social_password} \n")
                     else:
                             print("No credentials found")
-
-        
-        elif option == 2:
-
-            print("Enter your username")
-
-            user_name =input()
-
-            print("Enter Password")
-
-            password = input()
-
-            print(f"Logged in as {user_name}")
-
-            print("\n")
-
-            while True:
-
-                print("Choose what you'd like to do \n")
-
-                print("\n 1. Add credentials \n 2. Display credentials \n")
-
-                choice = int(input())
-
-                if choice == 1:
-
-                    print("Enter social platform name")
-
-                    social_name = input()
-
-                    print("Enter username")
-
-                    social_username = input()
-
-                    print("Enter password")
-
-                    social_password = input()
-
-                    save_credentials(new_credentials(social_name,social_username,social_password))
-
-                    print("\n")
-
-                elif choice == 2:
-
-                    if display_credentials():
-                        for crendential in display_credentials():
-                            print(f"Social Name: {crendential.social_name}\n Username: {crendential.social_username} \n Password: {crendential.social_password} \n")
-                    else:
-                        print("No credentials found")
-
 
             
 

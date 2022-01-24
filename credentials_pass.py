@@ -16,11 +16,20 @@ class Credentials:
     """
 
     def save_socials(self):
+        """
+        Method for saving credentials
+        """
         Credentials.socials_list.append(self)
 
     def delete_socials(self):
+        """
+        Method for deleting credentials
+        """
         Credentials.socials_list.remove(self)
 
     @classmethod
     def display_socials(cls):
+        """
+        Method for displaying credentials
+        """
         return cls.socials_list
